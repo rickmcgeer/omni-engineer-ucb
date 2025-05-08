@@ -1,11 +1,7 @@
-# LBL Fork
+# UCB Fork
  
-The LBL fork is preconfigured to work with [CBORG](https://cborg.lbl.gov/). 
-To get started you must:
-
-1. Get an API key to use the CBORG service, available [here](https://cborg.lbl.gov/api_request/).
-2. Set an environment variable on your machine for `CBORG_API_KEY`. Please use the best practices for API key management described [here](https://help.openai.com/en/articles/5112595-best-practices-for-api-key-safety).
-3. The code defaults to the `lbl/cborg-coder:latest` model. If you want to choose another model (for example, Anthropic's Claude 3.5), you must edit the code in `main.py`by uncommenting the relevant models and commenting the existing ones.  
+The UCB  fork  is a derivative of the LBL fork, and is preconfigured to work with [BearBorg](https://bearborgberkeley.edu/). It is designed to be used in a Berkeley-deployed Jupyter server, where authentication information is provided to the server on spawn.
+To get started you must get an account on a UCB-hosted JupyterHub that supports Omni Engineer UCB (also known as OmniBear)
  
 This fork also includes a tool `format_omni_markdown.py` to format saved Markdown chat logs from Omni Engineer for easy reading.   
 
@@ -13,9 +9,6 @@ This fork also includes a tool `format_omni_markdown.py` to format saved Markdow
 
 An intelligent assistant designed to enhance your development workflow with advanced AI capabilities.
 
-## ✨ NEW
-O1 support. Simply use 
-openai/o1-preview or openai/o1-mini as models.
 
 ## 🔍 Overview
 
@@ -56,27 +49,7 @@ Omni Engineer is a spiritual successor to [Claude Engineer](https://github.com/D
 - `/change_model`: Change the AI model
 - `/show <filepath>`: Display content of a file
 
-## 🚀 Installation
 
-1. Clone the repository:
-   Go to the directory of your choice, then 
-   ```
-   git clone https://github.com/lbnl-science-it/omni-engineer-lbl
-   
-   ```
-   Switch to the ```utilities``` branch
-   ```
-   git checkout utilities
-   ````
-2. Install the required packages:
-   ```
-   pip install -r requirements.txt
-   ```
-2. Set an environment variable on your machine for `CBORG_API_KEY`. Please use the best practices for API key management described [here](https://help.openai.com/en/articles/5112595-best-practices-for-api-key-safety).
-4. Run the main script:
-   ```
-   python main.py 
-   ```
 
 ## 📚 Usage
 
@@ -84,7 +57,13 @@ After launching the console, enter commands or questions as needed. The AI will 
 
 ## 🤖 AI Models
 
-Omni Engineer utilizes OpenRouter to access a variety of AI models. The default model is set to "anthropic/claude-3.5-sonnet" for general assistance and "google/gemini-pro-1.5" for code editing. You can view the current model with `/model` and change it using `/change_model`. For detailed information on available models and their capabilities, refer to [OpenRouter's documentation](https://openrouter.ai/models).
+Omni Engineer utilizes OpenRouter to access a variety of AI models. The default model is set to "openai/gpt4o" for general assistance and "google/gemini-2.0-flash-lite" for code editing. You can view the current model with `/model` and change it using `/change_model`. Currently supported models are:
+- openai/gpt4o
+- openai/gpt4o-mini
+- google/gemini-pro
+- google/gemini-flash
+- google/gemini-2.0-flash-lite
+- google/gemini-2.0-flash
 
 ## 🔧 Advanced Features
 
@@ -111,8 +90,20 @@ Contributions to Omni Engineer are welcome! Please feel free to submit pull requ
 
 *** Copyright Notice ***
 
-omni-engineer-lbl (omni) Copyright (c) 2025, The Regents of the University of California, through Lawrence Berkeley National Laboratory (subject to receipt of any required approvals from the U.S. Dept. of Energy) and Pietro Schirano. All rights reserved.
+omni-engineer-ucb (omni) Copyright (c) 2025, The Regents of the University of California, through Lawrence Berkeley National Laboratory (subject to receipt of any required approvals from the U.S. Dept. of Energy) and Pietro Schirano.  All rights reserved.
 
-If you have questions about your rights to use or distribute this software, please contact Berkeley Lab's Intellectual Property Office at IPO@lbl.gov.
+Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
+
+(1) Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
+
+(2) Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
+
+(3) Neither the name of the University of California, Lawrence Berkeley National Laboratory, U.S. Dept. of Energy, Pietro Schirano nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.
+
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+You are under no obligation whatsoever to provide any bug fixes, patches, or upgrades to the features, functionality or performance of the source code ("Enhancements") to anyone; however, if you choose to make your Enhancements available either publicly, or directly to Lawrence Berkeley National Laboratory, without imposing a separate written license agreement for such Enhancements, then you hereby grant the following license: a non-exclusive, royalty-free perpetual license to install, use, modify, prepare derivative works, incorporate into other computer software, distribute, and sublicense such enhancements or derivative works thereof, in binary and source code form.
+
 
 NOTICE.  This Software was developed under funding from the U.S. Department of Energy and the U.S. Government consequently retains certain rights.  As such, the U.S. Government has been granted for itself and others acting on its behalf a paid-up, nonexclusive, irrevocable, worldwide license in the Software to reproduce, distribute copies to the public, prepare derivative  works, and perform publicly and display publicly, and to permit others to do so.

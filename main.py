@@ -35,15 +35,17 @@ is_diff_on = True
 init(autoreset=True)
 load_dotenv()
 # Local clients/VPN users can also use https://api-local.cborg.lbl.gov
-base_url = "https://api.cborg.lbl.gov"
+base_url = "https://bearborg.berkeley.edu:4433"
 client = OpenAI(
     base_url=base_url,
-    api_key=os.getenv("CBORG_API_KEY"),
+    api_key=os.getenv("LITELLM_API_KEY"),
 )
 
 # Some model options available at LBL
-DEFAULT_MODEL = "lbl/cborg-coder:latest"
-EDITOR_MODEL = "lbl/cborg-coder:latest"
+DEFAULT_MODEL = "azure/gpt-4o"
+EDITOR_MODEL = "google/gemini-2.0-flash-lite"
+# DEFAULT_MODEL = "lbl/cborg-coder:latest"
+# EDITOR_MODEL = "lbl/cborg-coder:latest"
 #DEFAULT_MODEL = "lbl/deepseek-r1:llama-70b
 #DEFAULT_MODEL= "openai/gpt-4o" 
 #DEFAULT_MODEL = "openai/gpt-4o-mini" 
